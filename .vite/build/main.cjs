@@ -23,7 +23,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 let electron = require("electron");
 let node_path = require("node:path");
 node_path = __toESM(node_path);
-// node_modules/ms/index.js
+// node_modules/electron-squirrel-startup/node_modules/ms/index.js
 var require_ms = /* @__PURE__ */ __commonJSMin(((exports, module) => {
 	/**
 	* Helpers.
