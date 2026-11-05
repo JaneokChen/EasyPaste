@@ -10,6 +10,8 @@ import { FuseV1Options, FuseVersion } from '@electron/fuses';
 const config: ForgeConfig = {
   packagerConfig: {
     asar: true,
+    icon: `${import.meta.dirname}/assets/app.png`
+
   },
   rebuildConfig: {},
   makers: [
@@ -41,6 +43,7 @@ const config: ForgeConfig = {
           config: 'vite.renderer.config.mts',
         },
       ],
+      hotRestart: true,
     }),
     // Fuses are used to enable/disable various Electron functionality
     // at package time, before code signing the application
