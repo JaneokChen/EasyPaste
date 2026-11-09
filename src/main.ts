@@ -12,6 +12,7 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    show: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.cjs'),
     },
@@ -25,6 +26,10 @@ const createWindow = () => {
       path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`),
     );
   }
+
+  mainWindow.once('ready-to-show', ()=>{
+    mainWindow.show()
+  })
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();

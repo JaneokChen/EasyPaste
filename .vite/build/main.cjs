@@ -607,9 +607,13 @@ var createWindow = () => {
 	const mainWindow = new electron.BrowserWindow({
 		width: 800,
 		height: 600,
+		show: false,
 		webPreferences: { preload: node_path.default.join(__dirname, "preload.cjs") }
 	});
 	mainWindow.loadURL("http://localhost:5173");
+	mainWindow.once("ready-to-show", () => {
+		mainWindow.show();
+	});
 	mainWindow.webContents.openDevTools();
 };
 electron.app.whenReady().then(() => {
