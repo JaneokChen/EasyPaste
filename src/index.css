@@ -1,3 +1,11 @@
-*{
-  background-color: pink;
+@import 'tailwindcss';
+@plugin "daisyui";
+
+
+nav {
+  app-region: drag;
+}
+
+.btn{
+  app-region: no-drag;
 }
