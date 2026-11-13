@@ -619,6 +619,9 @@ var createWindow = () => {
 };
 electron.app.whenReady().then(() => {
 	createWindow();
+	electron.ipcMain.on("window:action", (event, action) => {
+		console.log(action);
+	});
 	electron.app.on("activate", () => {
 		if (electron.BrowserWindow.getAllWindows().length === 0) createWindow();
 	});
